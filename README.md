@@ -3,4 +3,4 @@ Bienvenue sur le projet  2 de la SAÉ 23 Mené par le groupe 4 (Jimmy, Chadi, Vi
 
 Objectifs:
 
-Créer une application web récupérrant la météo et la température des étudiants du groupe 4 et stocker les données récurrentes dans une base de donnée.
+Créer une application web récupérant de façon récurrente la météo et la température des étudiants du groupe 4 et stocker les données récurrentes dans une base de données.
