@@ -23,7 +23,7 @@ La catégorie "Meta" désigne les fichiers qui sont des dépendences du programm
 #### var.php
 Ce fichier contient simplement toutes les variables dont nous avons besoin dans le programme; il est invoqué au début de la partie php du fichier principal, voir ligne 9. Son utilité première est de fluidifier la lecture du code, et de servir de "dictionnaire de variables".
 
-### fonct.php
+#### fonct.php
 Ce fichier est un dictionnaire de toutes les fonctions que l'on utilisera. Il fait appel au fichier var.php au tout début de son éxécution pour récolter les variables requises (par exemple, la ville qui a une valeur pré-attribuée -avant modifications d'éxecution- pour éviter les problèmes d'avertissements).
 Son but premier est de pouvoir invoquer une commande, située en son contenu, au lieu de la ré-écrire entièrement plusieurs fois dans le programme principal.
 Ainsi, en plus de gagner en place et en lisibilité, si nous faisons une erreur dans la fonction, on peut modifier qu'une seule fois la fonction, et le reste sera automatiquement mis à jour.
