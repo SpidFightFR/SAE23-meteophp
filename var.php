@@ -6,5 +6,7 @@
 	$user="jbettig";
 	$dbname="jbettig_01";
 	$pass="Benlechien";
-	$ville=$json=$climat="test";
+	$conn = mysqli_connect($ip, $user, $pass, $dbname );
+	$ville=$json=$climat=$ville2="test";
+	$today=date("Y-m-d");
 ?>

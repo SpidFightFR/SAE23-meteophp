@@ -9,7 +9,6 @@
 					include "./meta/var.php";
 					include "./meta/fonct.php";
 					echo ("nom de l'élève: " . $name . "<br>");
-					$conn = mysqli_connect($ip, $user, $pass, $dbname );
 					if (!$conn){
 						echo "connection failed: " . mysqli_connect_error();
 					}
@@ -23,19 +22,26 @@
 						AND etudiants.idv1=villes.idv");
 					if ($R1 == null) die ("Unable to execute query: " . mysqli_error ($conn));
 					while ($row=mysqli_fetch_assoc($R1)){
-						echo ("Vous êtes: " . $row['noms'] . " " . $row['prenoms'] . "<br>" . "Vous êtes dans le groupe: " . $row['ngroup'] . "<br>");
+						echo ("Bonjour, " . $row['noms'] . " " . $row['prenoms'] . "<br>" . "Vous êtes dans le groupe: " . $row['ngroup'] . "<br>");
 						echo ("Vote résidence primaire est située à: " . $row['nomville'] . "<br>");
+						echo ("La date d'aujourd'hui est: " . $today . "<br>");
 						$ville=$row['nomville'];
-						meteo($ville, $json, $climat);	
+						$villeid=$row['idv'];
 						if ($row['idv2'] != null) 
 							$R2=mysqli_query($conn, "SELECT * FROM etudiants, villes
 							WHERE etudiants.noms='$name'
 							AND etudiants.idv2=villes.idv");
 							while ($row2=mysqli_fetch_assoc($R2)){ 
 								echo ("Votre résidence secondaire est située à: " . $row2['nomville'] . "<br>");
-								$ville=$row2['nomville'];
-								meteo($ville, $json, $climat);	
+								$ville2=$row2['nomville'];
 							}
+					}
+					meteo($ville);	
+					inserval($villeid , $climat , $today , $conn);
+					if ($ville2!= "test"){
+						$ville=$ville2;
+						meteo($ville);	
+						inserval($villeid , $climat , $today , $conn);
 					}
 				?>
         <br>
