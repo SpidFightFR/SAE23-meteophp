@@ -1,5 +1,5 @@
 # SAE23-PJ2
-Bienvenue sur le projet  2 de la SAÉ 23 Mené par le groupe 4 (Jimmy, Chadi, Vincent).
+Bienvenue sur le projet  2 de la SAÉ 23 Mené par le groupe 4 (J C V).
 
 
 Objectifs:
